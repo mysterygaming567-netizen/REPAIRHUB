@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find a repairman — RepairHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+
+  <main>
+    <section class="find">
+      <div class="container">
+        <h1>Find a repairman</h1>
+          <p class="sub">Browse verified shop owners near you.</p>
+
+        <div class="search-card">
+          <input id="search" placeholder="Search shops or locations...">
+          <select id="sort">
+            <option value="distance">Nearest first</option>
+            <option value="rating">Highest rated</option>
+            <option value="verified">Most verified</option>
+          </select>
+          <div class="category-row" id="categories"></div>
+          <label class="open-filter"><input id="openOnly" type="checkbox"> Open now</label>
+        </div>
+
+        <div id="shops" class="shops-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+  <script src="../login/firebase-config.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

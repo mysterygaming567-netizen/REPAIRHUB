@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop workspace | RepairHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+
+  <main class="container page" style="max-width:1100px;margin:24px auto;padding:0 24px">
+
+    <section class="panel" id="verificationGate" style="padding:28px;margin-bottom:20px">
+      <div style="max-width:560px">
+        <p class="kicker">SHOP VERIFICATION</p>
+        <h2 id="gateTitle">Complete verification to activate your shop</h2>
+        <p class="muted" id="gateBody">Upload a clear, unexpired government ID and a valid contact number. An admin will review it before your shop is visible to customers.</p>
+        <div id="gateStatus"></div>
+
+        <div id="verificationFormWrap">
+          <form id="verificationForm" style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
+            <label class="label" for="idType">PRIMARY ID TYPE</label>
+            <select id="idType" required>
+              <option value="">Select an accepted ID</option>
+              <option>PhilSys National ID</option>
+              <option>Driver's License</option>
+              <option>Passport</option>
+              <option>UMID</option>
+              <option>PRC ID</option>
+            </select>
+            <input id="idFile" type="file" accept="image/jpeg,image/png,image/webp,application/pdf" required style="display:none">
+            <label class="upload" for="idFile" style="cursor:pointer;border:1px dashed #dfe3e8;border-radius:10px;padding:22px;text-align:center">
+              <strong id="fileName">Choose ID document</strong>
+              <span style="display:block;font-size:11px;color:#9ba5b8;margin-top:6px">JPG, PNG, WEBP, or PDF · maximum 220 KB each (free plan)</span>
+            </label>
+
+            <label class="label" for="phone">CONTACT NUMBER (10-11 digits)</label>
+            <input id="phone" type="tel" placeholder="09XX XXX XXXX" required style="padding:11px 12px;border:1px solid #dfe3e8;border-radius:9px;font:inherit">
+
+            <label class="label" for="idType2">SECOND ID (optional · +20% from 60% to 80%)</label>
+            <select id="idType2">
+              <option value="">None — I'll add this later</option>
+              <option>PhilSys National ID</option>
+              <option>Driver's License</option>
+              <option>Passport</option>
+              <option>UMID</option>
+              <option>PRC ID</option>
+            </select>
+            <input id="id2File" type="file" accept="image/jpeg,image/png,image/webp,application/pdf" style="display:none">
+            <label class="upload" for="id2File" style="cursor:pointer;border:1px dashed #dfe3e8;border-radius:10px;padding:18px;text-align:center">
+              <strong id="fileName2">Choose second ID document</strong>
+              <span style="display:block;font-size:11px;color:#9ba5b8;margin-top:6px">JPG, PNG, WEBP, or PDF · maximum 220 KB</span>
+            </label>
+
+            <label class="label" for="munFile">MUNICIPAL REGISTRATION CERTIFICATE (optional · +20% to reach 100%)</label>
+            <input id="munFile" type="file" accept="image/jpeg,image/png,image/webp,application/pdf" style="display:none">
+            <label class="upload" for="munFile" style="cursor:pointer;border:1px dashed #dfe3e8;border-radius:10px;padding:18px;text-align:center">
+              <strong id="munFileName">Choose business certificate</strong>
+              <span style="display:block;font-size:11px;color:#9ba5b8;margin-top:6px">JPG, PNG, WEBP, or PDF · maximum 220 KB</span>
+            </label>
+
+            <p class="error" id="uploadError"></p>
+            <button class="btn primary" id="submitId" type="submit">Submit for review</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="workspace">
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">SHOP OWNER WORKSPACE</p>
+          <h1 id="shopGreeting">Good morning</h1>
+          <p>Review new intake, inspect evidence, chat with customers, and mark each job fixable.</p>
+        </div>
+        <a class="button primary" href="../submit/submit.html">+ New intake</a>
+      </section>
+
+      <section class="stats">
+        <article><span>On the bench</span><strong id="activeCount">0</strong><em>active repair tickets</em></article>
+        <article><span>Completed</span><strong id="completedCount">0</strong><em>finished jobs</em></article>
+        <article class="urgent-stat"><span>Needs attention</span><strong id="urgentCount">0</strong><em>urgent deadlines</em></article>
+        <article><span>Shop status</span><strong id="verifiedBadge">✓</strong><em id="verifiedCaption">admin approved</em></article>
+      </section>
+
+      <section class="panel" id="calendarPanel" style="margin-bottom:18px">
+        <div class="panel-heading">
+          <div><p class="kicker">SCHEDULE</p><h2>This month at your bench</h2></div>
+          <span class="muted" id="calendarCaption">0 accepted repairs this month</span>
+        </div>
+        <div class="calendar" id="calendarGrid"></div>
+        <div class="legend">
+          <span><i class="dot dark"></i>Today</span>
+          <span><i class="dot orange"></i>Repair scheduled</span>
+          <span><i class="dot sage"></i>Urgent deadline</span>
+        </div>
+      </section>
+
+      <section class="panel repairs-panel" id="repairs">
+        <div class="panel-heading">
+          <div><p class="kicker">REPAIR OPERATIONS</p><h2>Active repairs</h2></div>
+          <span class="muted" id="ticketCount"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Ticket</th><th>Customer / device</th><th>Status</th><th>Deadline</th><th>Action</th></tr></thead>
+            <tbody id="repairRows"></tbody>
+          </table>
+        </div>
+        <div id="detail" class="detail hidden"></div>
+      </section>
+
+      <section class="panel verification-panel" id="verification">
+        <div style="flex:1">
+          <p class="kicker">CREDIBILITY</p>
+          <h2>Trust factor</h2>
+          <p class="muted" id="verificationCaption">Your shop is approved and listed on RepairHub.</p>
+          <div class="doc-checks" id="trustDocs"></div>
+        </div>
+        <div class="trust-line">
+          <strong id="trustScore">60%</strong>
+          <div class="meter"><i id="trustMeter" style="width:60%"></i></div>
+          <span class="status ready">✓ Approved</span>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+  <script src="../login/firebase-config.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

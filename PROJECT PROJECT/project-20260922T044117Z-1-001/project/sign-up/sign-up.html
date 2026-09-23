@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RepairHub — Create account</title>
+  <link rel="stylesheet" href="sign-up.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="back" href="../index/index.html">← Back</a>
+      <div class="brand-lockup"><div class="brand">R</div><span>RepairHub</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="signup-page">
+      <div class="signup-layout">
+        <div class="signup-visual">
+          <div class="visual-copy">
+            <p class="eyebrow">JOIN REPAIRHUB</p>
+            <h2>Connect with verified local technicians, share the details of the issue, and follow every repair from intake to pickup.</h2>
+            <div class="visual-note">
+              <strong>93% verified</strong>
+              <span>CircuitFix Electronics · Quezon City</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="signup-form-area">
+          <div class="signup-wrap">
+            <h1>Create account</h1>
+            <p class="sub">Sign up to continue.</p>
+
+            <form id="signupForm" class="signup-card" novalidate>
+              <label class="label" for="username">USERNAME</label>
+              <input id="username" type="text" placeholder="Enter your username" autocomplete="username" required>
+              <span id="usernameError" class="error" aria-live="polite"></span>
+
+              <div class="role-toggle" aria-label="Account type">
+                <button type="button" class="role active" data-role="customer">Customer</button>
+                <button type="button" class="role" data-role="shop">Shop owner</button>
+                <button type="button" class="role" data-role="admin">Admin</button>
+              </div>
+
+              <label class="label" for="email">EMAIL</label>
+              <input id="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+              <span id="emailError" class="error" aria-live="polite"></span>
+
+              <label class="label" for="password">PASSWORD</label>
+              <input id="password" type="password" placeholder="Create a password" autocomplete="new-password" required>
+              <span id="passwordError" class="error" aria-live="polite"></span>
+
+              <label class="label" for="confirmPassword">CONFIRM PASSWORD</label>
+              <input id="confirmPassword" type="password" placeholder="Confirm your password" autocomplete="new-password" required>
+              <span id="confirmPasswordError" class="error" aria-live="polite"></span>
+
+              <button class="btn primary full" type="submit">Create account</button>
+              <p class="login-link">Already have an account? <a href="../login/login.html">Log in</a></p>
+              <div id="result" class="result" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="../login/firebase-config.js"></script>
+  <script src="sign-up.js"></script>
+</body>
+</html>

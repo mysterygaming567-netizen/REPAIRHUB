@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RepairHub — Trusted device repair</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand-lockup" href="../index/index.html"><div class="brand">R</div><span>RepairHub</span></a>
+      <div class="spacer"></div>
+      <nav class="actions">
+        <a href="../login/login.html" id="loginLink">Log in</a>
+        <a class="btn small" href="../sign-up/sign-up.html">Sign up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <p class="eyebrow">VERIFIED TECHNICIANS ONLY</p>
+          <h1>Stop guessing
+            <br>which shop
+            <br>to trust.
+            <span class="accent">Start knowing.</span>
+          </h1>
+          <p class="lead">RepairHub connects you with verified local technicians, lets you negotiate a deadline, and tracks your repair live — from first message to pickup.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="../login/login.html">Find a repairman</a>
+            <a class="btn ghost" href="../login/login.html">List my shop</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=85" alt="Technician working on electronic equipment">
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="num">01</div>
+            <h3>Find a verified shop</h3>
+            <p class="muted">Browse shops by location, category, and trust score.</p>
+          </div>
+          <div class="step">
+            <div class="num">02</div>
+            <h3>Submit your repair</h3>
+            <p class="muted">Upload photos, describe the issue, and set a deadline.</p>
+          </div>
+          <div class="step">
+            <div class="num">03</div>
+            <h3>Track it live</h3>
+            <p class="muted">Watch your repair progress from Received to Ready for Pickup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 RepairHub · National University CPE232</div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="../login/firebase-config.js"></script>
+  <script>
+    try {
+      const config = window.REPAIRHUB_FIREBASE_CONFIG;
+      if (config && config.apiKey) {
+        firebase.initializeApp(config);
+        firebase.auth().onAuthStateChanged((user) => {
+          const link = document.getElementById('loginLink');
+          if (user && link) {
+            link.setAttribute('href', '../dashboard/dashboard.html');
+            link.textContent = 'Open workspace';
+          }
+        });
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  </script>
+</body>
+</html>

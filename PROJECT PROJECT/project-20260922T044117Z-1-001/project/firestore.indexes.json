@@ -1,0 +1,29 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "repairs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "customerUid", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "repairs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "shopUid", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "verifications",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "submittedAt", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

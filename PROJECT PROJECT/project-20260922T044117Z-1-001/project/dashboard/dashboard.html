@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard — RepairHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+
+  <main>
+    <section class="dashboard">
+      <div class="container">
+        <h1 id="greeting">Good morning, User 👋</h1>
+        <p class="sub">Here's what's happening with your devices.</p>
+
+        <div class="stats">
+          <div class="stat-card"><div class="big" id="activeCount">0</div><div class="muted">Active repairs</div></div>
+          <div class="stat-card"><div class="big" id="completedCount">0</div><div class="muted">Completed</div></div>
+          <div class="stat-card"><div class="big" id="warrantiesCount">0</div><div class="muted">Warranties active</div></div>
+        </div>
+
+        <div class="section-head">
+          <h2>Active repair</h2>
+          <a class="view-all" href="../myrepairs/myrepairs.html">View all repairs →</a>
+        </div>
+        <div id="activeRepair"></div>
+
+        <div class="cta-banner">
+          <div class="cta-text">
+            <h3>Need another repair?</h3>
+            <p class="muted">Browse verified shops near you and submit a request.</p>
+          </div>
+          <div class="cta-action">
+            <a class="btn primary large" href="../find/find.html">Find a repairman</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+  <script src="../login/firebase-config.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

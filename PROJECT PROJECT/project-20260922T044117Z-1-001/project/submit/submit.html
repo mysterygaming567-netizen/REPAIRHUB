@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submit a repair — RepairHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+
+  <main>
+    <section class="submit">
+      <div class="container">
+        <h1>Submit a repair request</h1>
+        <p class="sub">Tell us what's wrong and we'll match you with a verified technician.</p>
+
+        <form id="submitForm" class="submit-card">
+          <label class="label" for="shop">REPAIR SHOP</label>
+          <select id="shop"><option value="">Choose where to send this repair…</option></select>
+
+          <label class="label" for="device">DEVICE</label>
+          <input id="device" placeholder="e.g. Smartphone — Samsung Galaxy S22" required>
+          <span id="deviceError" class="error" aria-live="polite"></span>
+
+          <label class="label" for="media">UPLOAD MEDIA</label>
+          <label class="upload" id="upload" for="media">Add photos, videos, or a PDF of the issue<span>Accepted: JPG, PNG, MP4, PDF · up to 10 MB each</span></label>
+          <input id="media" type="file" accept="image/*,video/*,.pdf" multiple hidden>
+
+          <label class="label" for="description">DESCRIBE THE ISSUE</label>
+          <textarea id="description" rows="4" placeholder="Describe the problem..." required></textarea>
+          <span id="descriptionError" class="error" aria-live="polite"></span>
+
+          <label class="label">PREFERRED DEADLINE</label>
+          <div class="deadline-row">
+            <select id="deadline"><option>Within 3 days</option><option>Within a week</option><option>Flexible</option></select>
+            <button type="submit" id="submitBtn" class="btn primary">Submit request</button>
+          </div>
+          <div id="submitResult" class="result"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+  <script src="../login/firebase-config.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

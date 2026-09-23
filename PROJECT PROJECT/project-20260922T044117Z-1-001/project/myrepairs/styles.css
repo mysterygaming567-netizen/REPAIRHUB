@@ -1,0 +1,452 @@
+.repair-card h3 {
+  margin: 5px 0 3px;
+}
+.repair-card p {
+  margin: 3px 0;
+}
+.ticket {
+  font: 700 10px/1 monospace;
+  letter-spacing: 0.08em;
+  color: #8c98aa;
+}
+.messages-title {
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding-top: 12px;
+  margin-top: 14px;
+  margin-bottom: 9px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #59667a;
+}
+.message-form {
+  display: flex;
+  gap: 7px;
+  margin-top: 10px;
+}
+.message-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 9px;
+  border: 1px solid #dfe3e8;
+  border-radius: 7px;
+  font:
+    12px Inter,
+    sans-serif;
+}
+.message-form .btn {
+  padding: 9px 13px;
+  background: var(--nav-bg);
+  color: #fff;
+}
+.msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  font-size: 12px;
+}
+.msg small {
+  font-size: 9px;
+  color: #93a0a7;
+  margin-top: 3px;
+}
+.media-note {
+  font-size: 11px;
+  color: #66777b;
+  background: #f7f8f5;
+  border-radius: 7px;
+  padding: 8px;
+}
+.warranty {
+  background: #eef7ef;
+  color: #3f806c;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 7px;
+  margin: 13px 0 0;
+}
+/* Reference layout */
+:root {
+  --nav-bg: #1e2d3e;
+  --accent: #e06640;
+  --beige: #f5ede3;
+  --dark: #1e2d3e;
+  --muted: #7f8ba0;
+}
+body {
+  font-family: Inter, sans-serif;
+  background: var(--beige);
+}
+h1,
+h2,
+h3 {
+  font-family: Outfit, sans-serif;
+}
+.my-repairs {
+  padding: 25px 0;
+}
+.container {
+  max-width: 670px;
+}
+.my-repairs h1 {
+  font:
+    700 24px Outfit,
+    sans-serif;
+  margin-bottom: 20px;
+}
+.repair-card {
+  padding: 21px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  min-width: 0;
+}
+.repair-card h3 {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+.badge {
+  font-size: 10px;
+  border-radius: 20px;
+  background: #dceaff;
+  color: #2663d5;
+  padding: 5px 10px;
+}
+.progress {
+  gap: 10px;
+  margin: 16px 0;
+}
+.step span {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 11px;
+}
+.step .label {
+  font-size: 9px;
+  overflow-wrap: anywhere;
+}
+.meta-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding-top: 9px;
+  justify-content: space-between;
+  font-size: 10px;
+}
+.meta-row strong {
+  font-size: 11px;
+  color: var(--dark);
+  overflow-wrap: anywhere;
+}
+.msg {
+  font-size: 12px;
+}
+.msg.from-user {
+  background: var(--nav-bg);
+}
+@media (max-width: 700px) {
+  .container {
+    width: 100%;
+    min-width: 0;
+    padding: 0 16px;
+  }
+  .meta-row {
+    gap: 8px;
+  }
+  .meta-row > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .repair-card > div:first-child {
+    min-width: 0;
+  }
+  .progress {
+    gap: 3px;
+  }
+  .step {
+    min-width: 0;
+  }
+}
+:root {
+  --nav-bg: #17232d;
+  --accent: #e36b49;
+  --beige: #f1e7df;
+  --dark: #16222b;
+  --muted: #7b8a91;
+}
+
+.chat-toggle {
+  align-self: flex-start;
+  margin-top: 14px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font:
+    600 11px Inter,
+    sans-serif;
+  padding: 0;
+  cursor: pointer;
+}
+.messages.chat-collapsed {
+  display: none;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+@media (max-width: 260px) {
+  .my-repairs {
+    padding: 6px 0;
+  }
+  .my-repairs h1 {
+    margin-bottom: 8px;
+    font-size: 19px;
+  }
+  .my-repairs .container {
+    padding: 0 10px;
+  }
+  .repair-card {
+    padding: 10px 8px;
+  }
+  .repair-summary {
+    gap: 6px;
+  }
+  .badge {
+    padding: 5px 6px;
+  }
+  .meta-row {
+    font-size: 9px;
+  }
+}
+@media (max-width: 260px) {
+  .repair-card .progress {
+    width: 100%;
+    gap: 0;
+    overflow: hidden;
+  }
+  .repair-card .step {
+    min-width: 0;
+    width: 20%;
+    overflow: hidden;
+  }
+  .repair-card .step span {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 8px;
+  }
+  .repair-card .step .label {
+    font-size: 6px;
+    line-height: 1.1;
+  }
+  .repair-card .media-note {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+.chat-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 78px;
+  height: 30px;
+  padding: 0 13px;
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  background: #fff4ee;
+  color: var(--accent);
+  font:
+    600 11px Inter,
+    sans-serif;
+  cursor: pointer;
+}
+.chat-toggle:hover {
+  background: var(--accent);
+  color: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Inter, system-ui, Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: var(--dark);
+  background: var(--beige);
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+h1 {
+  font-size: 48px;
+  line-height: 1.02;
+  margin: 0 0 18px;
+  color: #102231;
+}
+.muted {
+  color: var(--muted);
+}
+.repair-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+.badge {
+  background: #eef6ff;
+  padding: 6px 10px;
+  border-radius: 12px;
+  color: #1b61a8;
+  font-weight: 600;
+}
+.progress {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+}
+.step {
+  flex: 1;
+  text-align: center;
+}
+.step span {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  line-height: 28px;
+}
+.step.done span {
+  background: green;
+  color: #fff;
+}
+.step.active span {
+  background: var(--accent);
+  color: #fff;
+}
+.step .label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.meta-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 12px;
+  color: var(--muted);
+}
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+.messages-title {
+  width: 100%;
+}
+.msg {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 78%;
+  padding: 9px 12px;
+  border-radius: 16px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.msg span {
+  overflow-wrap: anywhere;
+}
+.msg small {
+  font-size: 9px;
+  margin-top: 4px;
+  color: rgba(25, 49, 60, 0.55);
+}
+.msg.from-shop {
+  align-self: flex-start;
+  background: #f3ece6;
+  border-bottom-left-radius: 4px;
+}
+.msg.from-user {
+  align-self: flex-end;
+  background: #16222b;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.msg.from-user small {
+  color: rgba(255, 255, 255, 0.65);
+}
+.message-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+.message-form input {
+  flex: 1;
+  min-width: 0;
+}
+.message-form .btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.my-repairs .container {
+  max-width: 670px;
+}
+@media (max-width: 700px) {
+  .my-repairs .container {
+    width: 100%;
+    min-width: 0;
+    padding: 0 16px;
+  }
+}
+.my-repairs .container {
+  width: min(670px, 100%);
+  min-width: 0;
+}
+.repair-card {
+  min-width: 0;
+}
+.repair-card .repair-summary {
+  min-width: 0;
+}
+.repair-card .progress {
+  min-width: 0;
+}
+.repair-card .step {
+  min-width: 0;
+}
+.repair-card .step .label {
+  overflow-wrap: anywhere;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+@media (max-width: 260px) {
+  .my-repairs .container {
+    padding: 0 10px;
+  }
+  .repair-card {
+    padding: 14px 10px;
+  }
+  .meta-row {
+    gap: 6px;
+    font-size: 9px;
+  }
+  .progress {
+    gap: 1px;
+  }
+  .step .label {
+    font-size: 7px;
+  }
+}
